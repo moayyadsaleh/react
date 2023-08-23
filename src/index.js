@@ -1,10 +1,19 @@
-import React from"react";
-import ReactDom from"react-dom";
 
-const firstName = "Moayyad";
-const lastName  = "Saleh";
-const luckyNumber = 7;
-ReactDom.render(<div>
-<h1>Hello {`${firstName} ${lastName}`}</h1>
-<p>Your luck number is {Math.floor(Math.random() * 10)}</p>
-</div>, document.getElementById("root"));
+import React from "react";
+import ReactDOM  from "react-dom";
+
+const creatorName = "Moayyad";
+const creationYear = new Date().getFullYear();
+
+ReactDOM.render(<div>
+<p>created by {creatorName}</p>
+<p>&copy; {creationYear}. All rights reserved.</p>
+</div>, document.getElementById("root"))
+//Create a react app from scratch.
+//It should display 2 paragraph HTML elements.
+//The paragraphs should say:
+//Created by YOURNAME.
+//Copyright CURRENTYEAR.
+//E.g.
+//Created by Angela Yu.
+//Copyright 2019.
