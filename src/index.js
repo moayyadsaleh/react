@@ -1,14 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from"react";
+import ReactDom from"react-dom";
 
-ReactDOM.render(
-  <div>
-    <h1>Hello from the Other Side</h1>
-    <ul>
-      <li>Bandourah</li>
-      <li>Batatah</li>
-      <li>Faggous</li>
-    </ul>
-  </div>,
-  document.getElementById("root")
-);
+const firstName = "Moayyad";
+const lastName  = "Saleh";
+const luckyNumber = 7;
+ReactDom.render(<div>
+<h1>Hello {`${firstName} ${lastName}`}</h1>
+<p>Your luck number is {Math.floor(Math.random() * 10)}</p>
+</div>, document.getElementById("root"));
