@@ -1,3 +1,10 @@
 .heading{
     color: red;
 }
+ul{
+    color: blue;
+}
+.food-image {
+    width: 100px;
+    height: 100px;
+  }
