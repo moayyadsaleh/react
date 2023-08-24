@@ -10,22 +10,21 @@ import { createRoot } from "react-dom/client";
 import"../src/index.css"; //Import Global styles
 import './components/styles.css'; // Import component-specific styles
 import App from './components/App';
-import * as pi from "../src/math"; //Import JS functions (import everything as pi)
+import * as Calculator from './mathOperation';
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 //Access functions. Since everything is imported, tap into the exported name . pie.doublepi, etc...
-console.log(pi);
 
 root.render(
     <div>
         <App></App>
         <ul>
-      <li>{pi.default}</li>
-      <li>{pi.doublePi()}</li>
-      <li>{pi.triplePi()}</li>
-    </ul>
+    <li>{Calculator.add(1, 2)}</li>
+    <li>{Calculator.multiply(2, 3)}</li>
+    <li>{Calculator.subtract(7, 2)}</li>
+    <li>{Calculator.divide(5, 2)}</li>
+  </ul>
     </div>
-
 );
 
