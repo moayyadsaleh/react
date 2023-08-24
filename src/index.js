@@ -1,44 +1,28 @@
 // Use createRoot instead of ReactDOM.render
 //Name HTML attributes with camelCase as if it is JS, example: className
 //in the html attributes, Java script can be used to insert, example: <img src={img} > </img>
+//React follows Pascal convention naming, the first word is a capital letter
+
 import React from "react";
 import { createRoot } from "react-dom/client";
 import"../src/index.css"; //Import Global styles
 import './components/styles.css'; // Import component-specific styles
+import  Heading from './components/Heading'; // Import the Heading component
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
-//Create a React app from scratch.
-//Show a single h1 that says "Good morning" if between midnight and 12PM.
-//or "Good Afternoon" if between 12PM and 6PM.
-//or "Good evening" if between 6PM and midnight.
-//Apply the "heading" style in the styles.css
-//Dynamically change the color of the h1 using inline css styles.
-//Morning = red, Afternoon = green, Night = blue.
-const date = new Date(2023, 8, 19);
-const currentTime = date.getHours();
-console.log(currentTime)
+//JS function can be used as elements(Custom components)
 
-let greeting;
-const customStyle = {
-  color: ""
-};
 
-if (currentTime >= 0 && currentTime < 12) {
-  greeting = "Good Morning";
-  customStyle.color = "red";
-} else if (currentTime < 18) {
-  greeting = "Good Afternoon";
-  customStyle.color = "green";
-} else {
-  greeting = "Good Night";
-  customStyle.color = "blue";
-}
 
 root.render(
-  <div>
-    <h1 className="heading" style={{ color: customStyle.color }}>
-      {greeting}
-    </h1>
+<div>
+<Heading></Heading>
+    <ul>
+      <li>Bacon</li>
+      <li>Jamon</li>
+      <li>Noodles</li>
+    </ul>
   </div>
 );
