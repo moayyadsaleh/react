@@ -1,26 +1,44 @@
+// Use createRoot instead of ReactDOM.render
+//Name HTML attributes with camelCase as if it is JS, example: className
+//in the html attributes, Java script can be used to insert, example: <img src={img} > </img>
 import React from "react";
-import { createRoot } from "react-dom/client"; // Import createRoot from the correct path
+import { createRoot } from "react-dom/client";
 import"../src/index.css"; //Import Global styles
 import './components/styles.css'; // Import component-specific styles
-
-
-
-const img = "https://picsum.photos/200";
 const rootElement = document.getElementById("root");
-
-// Use createRoot instead of ReactDOM.render
-//Name HTML attributes with Camel Case as if it is JS, example: className
-//in the html attributes, Java script can be used to insert, example: <img src={img} > </img>
 const root = createRoot(rootElement);
+
+//Create a React app from scratch.
+//Show a single h1 that says "Good morning" if between midnight and 12PM.
+//or "Good Afternoon" if between 12PM and 6PM.
+//or "Good evening" if between 6PM and midnight.
+//Apply the "heading" style in the styles.css
+//Dynamically change the color of the h1 using inline css styles.
+//Morning = red, Afternoon = green, Night = blue.
+const date = new Date(2023, 8, 19);
+const currentTime = date.getHours();
+console.log(currentTime)
+
+let greeting;
+const customStyle = {
+  color: ""
+};
+
+if (currentTime >= 0 && currentTime < 12) {
+  greeting = "Good Morning";
+  customStyle.color = "red";
+} else if (currentTime < 18) {
+  greeting = "Good Afternoon";
+  customStyle.color = "green";
+} else {
+  greeting = "Good Night";
+  customStyle.color = "blue";
+}
+
 root.render(
   <div>
-    <h1 className="heading" contenteditable="true" spellCheck="true">My Favourite Foods</h1> 
-    <p title="I'm a tooltip">This is a paragraph.</p>
-    <p lang="fr">Ceci est un paragraphe.</p>
-    <p translate="yes">Don't translate this!</p>
-<div className="food-image">
-
-<img src={img}></img>
-</div>
+    <h1 className="heading" style={{ color: customStyle.color }}>
+      {greeting}
+    </h1>
   </div>
 );
