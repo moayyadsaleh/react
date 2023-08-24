@@ -9,9 +9,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import"../src/index.css"; //Import Global styles
 import './components/styles.css'; // Import component-specific styles
-import './components/App'; // Import component-specific styles
-import Heading from "./components/Heading";
-
+import App from './components/App'
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
@@ -19,5 +17,5 @@ const root = createRoot(rootElement);
 
 
 root.render(
-<Heading></Heading>
+<App></App>
 );
