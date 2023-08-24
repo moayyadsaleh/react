@@ -7,7 +7,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import"../src/index.css"; //Import Global styles
 import './components/styles.css'; // Import component-specific styles
-import  Heading from './components/Heading'; // Import the Heading component
+import App from "./components/App"
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -17,12 +17,5 @@ const root = createRoot(rootElement);
 
 
 root.render(
-<div>
-<Heading></Heading>
-    <ul>
-      <li>Bacon</li>
-      <li>Jamon</li>
-      <li>Noodles</li>
-    </ul>
-  </div>
+<App></App>
 );
