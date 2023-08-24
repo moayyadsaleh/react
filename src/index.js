@@ -9,7 +9,8 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import"../src/index.css"; //Import Global styles
 import './components/styles.css'; // Import component-specific styles
-import App from './components/App'
+import App from './components/App';
+import pi, {doublePi, triplePi} from "../src/math";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
@@ -17,5 +18,14 @@ const root = createRoot(rootElement);
 
 
 root.render(
-<App></App>
+    <div>
+        <App></App>
+        <ul>
+      <li>{pi}</li>
+      <li>{doublePi()}</li>
+      <li>{triplePi()}</li>
+    </ul>
+    </div>
+
 );
+
