@@ -8,23 +8,30 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import"../src/index.css"; //Import Global styles
-import './components/styles.css'; // Import component-specific styles
-import App from './components/App';
-import * as Calculator from './mathOperation';
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
-//Access functions. Since everything is imported, tap into the exported name . pie.doublepi, etc...
+//Create the function, called Card in this case. 
+//props are the attributes given to the card in the rendered customized components.
+function Card (props) {
+  console.log(props)  
+return (
+  <div>
+    <h2>{props.name}</h2>
+  <img
+    src={props.img}
+    alt="avatar_img"/>
+  <p>{props.tel}</p>
+  <p>{props.email}</p>
+  </div>
+)
+}
+
 
 root.render(
-    <div>
-        <App></App>
-        <ul>
-    <li>{Calculator.add(1, 2)}</li>
-    <li>{Calculator.multiply(2, 3)}</li>
-    <li>{Calculator.subtract(7, 2)}</li>
-    <li>{Calculator.divide(5, 2)}</li>
-  </ul>
-    </div>
+  <div>
+  <Card name="Beyonce" img="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg" tel="+123 456 789" email="b@beyonce.com"> </Card>
+<Card name="Moayyad Saleh" img="https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg" tel="123456879"  email="moayyad@gmail.com"></Card>
+</div>
 );
 
